@@ -43,7 +43,7 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
       }
 
       const findProduct = cart.find(product => {
-        return productId == product.id
+        return productId === product.id
       })
 
       if (findProduct) {
@@ -100,7 +100,7 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
   const removeProduct = (productId: number) => {
     try {
       const findProduct = cart.find(product => {
-        return productId == product.id
+        return productId === product.id
       })
 
       if (findProduct) {
@@ -108,6 +108,7 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
           if (product.id !== productId) {
             return product
           }
+          return ''
         })
 
         localStorage.setItem('@RocketShoes:cart', JSON.stringify(filterProducts))
@@ -137,7 +138,7 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
       }
 
       const findProduct = cart.find(product => {
-        return productId == product.id
+        return productId === product.id
       })
 
       if (findProduct) {
